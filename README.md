@@ -132,16 +132,17 @@ df = pd.read_csv(csv_file, index_col = col name /col idx, parse_dates = col name
 
 ### Trading
 
-- Given two signals `MA10` (fast) and `MA50` (slow).
+- Calculate fast and slow signals `MA10` (fast) and `MA50` (slow).
   - If `MA10` > `MA50`: the stock price is believed that it **goes up** :arrow_up: in the next several days.
   - otherwise, the stock price is believed that it **goes down** :arrow_down: in the next several days.
-- Calculate daily profit: $Daily\_profit = close\_price\_of\_tomorrow - close\_price\_of\_today$
 - Calculate the number of shares held. `Shares` denotes whether we long or not.
 ```python
 Shares = 1 if MA10 > MA50
          0 otherwise
 ```
 - `Shares = 0` means we don't have stock at hand => `profit = 0`.
+- Calculate daily profit: $Daily\_profit = close\_price\_of\_tomorrow - close\_price\_of\_today$.
+- Generate a graph displaying daily profit and accumulated wealth.
 
 ### Long and short concept
 
