@@ -157,14 +157,19 @@ Shares = 1 if MA10 > MA50
 
 ### Keys takeaway
 
-- Trading terms: long / short, moving average, fast / slow signal, daily profit.
+- Trading terms:
+  - daily profit.
+  - moving average
+  - fast vs. slow signal.
+  - long vs. short.
 - DataFrame / Series:
   - Basics:
     - Attributes: `index`, `columns`, `shape`.
     - Methods:
+      - `read_csv`.
       - `head`, `tail`, `describe`, `loc`, `iloc`.
       - `plot`.
       - `set_index`, `reset_index`.
   - Advanced:
     - Methods: `shift`, `rolling`.
-    - :warning: View vs. Copy.
+    - :warning: view vs. copy.
