@@ -8,9 +8,9 @@ Tuan's notes on the course [Python and Statistics for Financial Analysis](https:
   - [Basic of DataFrame](#basic-of-dataframe)
   - [Generate new variables in DataFrame](#generate-new-variables-in-dataframe)
   - [:warning: View vs. Copy](#warning-view-vs-copy)
-  - [Trading strategy](#trading-strategy)
+  - [Long one-share stock trading strategy](#long-one-share-stock-trading-strategy)
+  - [Trading](#trading)
   - [Long and short concept](#long-and-short-concept)
-  - [Long one share stock trading strategy](#long-one-share-stock-trading-strategy)
   - [Keys takeaway](#keys-takeaway)
 
 ## Module 1: Visualizing and Munging Stock Data
@@ -118,13 +118,25 @@ df = pd.read_csv(csv_file, index_col = col name /col idx, parse_dates = col name
 | `df.loc[:, col]`   | Series    | Often a **view**                   |
 | `df.loc[:, [col]]` | DataFrame | Usually a **view**, but not always |
 
-### Trading strategy
+### Long one-share stock trading strategy
+
+- Buy **1** share of a stock instead of many.
+- Strategy:
+  - use fast & slow signals (MA10 and MA50, for instance).
+  - if $fast > slow$, meaning that the recent prices are gaining => **buy**.
+  - otherwise, => **do nothing**.
+- Why use it ?
+  - low risk: max loss = price of one share.
+  - good  for beginners: test the market without big exposure.
+  - hands-on learning: get to experience real price movements.
+
+### Trading
 
 - Given two signals `MA10` (fast) and `MA50` (slow).
   - If `MA10` > `MA50`: the stock price is believed that it **goes up** :arrow_up: in the next several days.
   - otherwise, the stock price is believed that it **goes down** :arrow_down: in the next several days.
-- $Daily\_profit = close\_price\_of\_tomorrow - close\_price\_of\_today$
-- `Shares` denotes whether we long or not.
+- Calculate daily profit: $Daily\_profit = close\_price\_of\_tomorrow - close\_price\_of\_today$
+- Calculate the number of shares held. `Shares` denotes whether we long or not.
 ```python
 Shares = 1 if MA10 > MA50
          0 otherwise
@@ -134,26 +146,14 @@ Shares = 1 if MA10 > MA50
 ### Long and short concept
 
 - **long:** **buy** a stock and **expecting** the price goes up :arrow_up:.
-  - later, when it goes up, **sell** it for a *higher price* to make a profit.
+  - **later**, when it goes up, **sell** it for a *higher price* to make a profit.
 - **short:** **borrow** shares and **sell** them right away, **hoping** the price drops :arrow_down:.
-  - later, when it drops, **buy** them back at a *lower price* to return to the lender, pocketing the difference.
+  - **later**, when it drops, **buy** them back at a *lower price* to return to the lender, pocketing the difference.
 
 | Proposition | Expect price to       | First               | Then       | Profit if price      |
 | :-----------| :-------------------- | :------------------ | ---------- | -------------------- |
 | long        |  go up :arrow_up:     | **buy**             | sell later | go up :arrow_up:     |
 | short       |  go down :arrow_down: | **sell** (borrowed) | buy back   | go down :arrow_down: |
-
-### Long one share stock trading strategy
-
-- Buy **1** share of a stock instead of many.
-- Strategy:
-  - use fast & slow signal (MA10 and MA50, for instance).
-  - if $fast > slow$ => the price goes up => **buy**.
-  - otherwise, => **do nothing**.
-- Why use it ?
-  - low risk: max loss = price of one share.
-  - good  for beginners: test the market without big exposure.
-  - hands-on learning: get to experience real price movements.
 
 ### Keys takeaway
 
