@@ -226,12 +226,12 @@ Shares = 1 if MA10 > MA50
   - formula: it's average of squared differences from the mean.
 
     $$\sigma^2 = E[(X-\mu)^2] = \sum_{i=1}^n (x_i - \mu)^2p_i$$
-    - measured in **squared units**.
-    - harder to interpret intuitively.
+  - measured in **squared units**.
+  - harder to interpret intuitively.
 - **Standard Deviation** is the square root of the variance.
   - denoted as $\sigma$.
   - is in the **same units** as the data.
-    - much more interpretable, can directly compare it to data values.
+    - much more interpretable in compare with variance, can directly compare it to data values.
     - we **report standard deviation** instead of variance because it's more understandable and in the right units.
 - DataFrame / Series methods:
   - `sum` (on DataFrame): add up values along an axis.
@@ -244,19 +244,19 @@ Shares = 1 if MA10 > MA50
       - indexes are **possible values**.
       - values are **frequencies** of values.
     - `normalize=True`: gives **relative frequencies** instead of frequencies.
-- Continuous Random Variable
+- **Continuous Random Variable**
   - **Probability Density Function (PDF)**:
     - describes how densely packed the probability is at each point.
       - the probability at an exact point is always 0 (since nb_points $= \infty$).
       - find probabilities **over an interval** instead.
     - for a PDF, the probability that a random variable $X$ falls in an interval $[a, b]$ is:
 
-    $$P(a \leq X \leq b) = \int_a^b f(x)dx$$
+      $$P(a \leq X \leq b) = \int_a^b f(x)dx$$
     - define the PDF based on **known distribution** or **estimated** from data.
     - there're many types of distribution: normal, exponential, uniform, gamma, beta, etc.
     - each type has its own formula of PDF. For instance, the normal distributuion
 
-    $$f(x, \mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}e^{-\frac{(x-\mu)^2}{2\sigma^2}}}$$
+      $$f(x, \mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}e^{-\frac{(x-\mu)^2}{2\sigma^2}}}$$
     - estimate the PDF from a samle using:
       - histograms: basic but rough.
       - kernel density estimation (KDE): smooth, better.
@@ -288,23 +288,28 @@ Shares = 1 if MA10 > MA50
     - results in a smooth curve that flows nicely across the data instead of jumping in steps like histogram.
 - **Cumulative Distribution Function (CDF)**:
   - tells us what is the probability that a random variable $X$ is less than or equal to a certain value $x$.
+
     $$F(x) = P(X \leq x)$$
   - is used for:
     - find probabilities, for instance:
+
       $$P(a \leq x \leq b) = F(b) - F(a)$$
     - understand distribution shape: we can see where the most of the probability is.
     - transform data: CDFs are used to normalize distributions.
   - attributes:
-    - $0 \leq F(x) \leq 1 \; \; \forall x$
+    - $0 \leq F(x) \leq 1 \ \forall x$
     - always non-decreasing.
     - discrete variables: jumps at each point.
     - continuous variables: smooth curve.
   - **how to compute CDF ?**
     - discrete variables:
-    $$F(x) = \sum_{t \leq x} P(X=t)$$
+
+      $$F(x) = \sum_{t \leq x} P(X=t)$$
     - continuous variables:
-    $$F(x) = \int_{-\infty}^x f(t)dt$$
-    where $f(x)$ is the probability density function (PDF) of the variable.
+
+      $$F(x) = \int_{-\infty}^x f(t)dt$$
+
+      where $f(x)$ is the probability density function (PDF) of the variable.
 - **Normal Density Curve**:
   - is the graph of the probability density function (PDF) for the normal distribution.
   - is also known as: normal curve, bell curve, Gaussian curve.
