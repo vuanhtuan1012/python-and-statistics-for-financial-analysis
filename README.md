@@ -279,12 +279,8 @@ Shares = 1 if MA10 > MA50
         - show a clear, smooth shape.
         - best for understanding distribution.
     - **rules of thumb** for choosing bins: given $N$ data points.
-      - Sturges' rule:
-
-        $$nb\_bins = \log_2(N) + 1$$
-      - Square-root rule:
-
-        $$nb\_bins = sqrt(N)$$
+      - Sturges' rule: nb_bins $= \log_2(N) + 1$
+      - Square-root rule: nb_bins $= sqrt(N)$
   - **Kernel Density Estimate (KDE)**:
     - is a way to reconstruct a smooth guess of the probability from data using small smooth bumps around each point.
     - instead of cutting data into bins like histogram, KDE places a smooth curve over each data point, then it adds all the curves together to create a smooth overall estimate.
