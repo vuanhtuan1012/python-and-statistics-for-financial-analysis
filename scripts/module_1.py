@@ -7,18 +7,7 @@ import logging
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from common import DATA_DIR, get_logger
-
-
-def read_csv(filename: str, logger: logging.Logger) -> pd.DataFrame:
-    """
-    Returns DataFrame read from CSV file in the data directory
-    """
-    df = pd.read_csv(
-        DATA_DIR.joinpath(filename), index_col="Date", parse_dates=["Date"]
-    )
-    logger.info("read successfully CSV file %s.", filename)
-    return df
+from common import get_logger, read_csv
 
 
 def get_column_name(window: int) -> str:

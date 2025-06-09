@@ -5,6 +5,8 @@ Common functions, classes, constants
 import logging
 from pathlib import Path
 
+import pandas as pd
+
 ROOT_DIR = Path(__file__).parent.parent
 DATA_DIR = ROOT_DIR.joinpath("data")
 
@@ -36,3 +38,14 @@ def get_logger() -> logging.Logger:
     logger.addHandler(handler)
 
     return logger
+
+
+def read_csv(filename: str, logger: logging.Logger) -> pd.DataFrame:
+    """
+    Returns DataFrame read from CSV file in the data directory
+    """
+    df = pd.read_csv(
+        DATA_DIR.joinpath(filename), index_col="Date", parse_dates=["Date"]
+    )
+    logger.info("read successfully CSV file %s.", filename)
+    return df
