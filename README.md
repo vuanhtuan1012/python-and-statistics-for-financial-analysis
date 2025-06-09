@@ -341,7 +341,7 @@ Shares = 1 if MA10 > MA50
     - *what's the range where most of the data falls ?*
 - **Value at Risk (VaR)**:
   - measures how much we could lose on an investment with a certain probability over certain time.
-  - example: give a stock porfolio worth $1 million. $1-$day VaR at 95% confidence = $20k means:
+  - example: give a stock porfolio worth $1 million. $1$-day VaR at 95% confidence = $20k means:
     - 95% chance losing $\leq$ $20k in one day.
     - $\approx$ 5% chance losing $\geq$ $20k in one day.
   - key points
@@ -359,12 +359,12 @@ Shares = 1 if MA10 > MA50
     - Monte Carlo simulation: simulate thousands of random scenarios.
   - real-life example: banks and investment firms must report their VaR to regulators like Federal Reserve.
 
-    "*Our $10-$days 99% VaR is $100m*" means only 1% chance they lose more than $100m in 10 days.
+    "*Our $10$-days 99% VaR is $100m*" means only 1% chance they lose more than $100m in 10 days.
 - **Log daily returns**:
   - are used in doing analysis instead of raw daily returns in real finance intuition.
   - main reasons:
     - simpler math: log returns make percentage changes addictive over time.
-    - time consistency: 5 daily log returns can just be added up to get $5-$day log return.
+    - time consistency: 5 daily log returns can just be added up to get $5$-day log return.
     - better symmetry: log returns are more symmetrically distributed => look more like a normal curve (bell curve).
     - avoid negatives: prices can't go below 0, but log returns handle that cleanly.
       - when $price = 0$ => $\log(0)$ is undefined: this is consistent with reality, a stock that hits 0 is bankrupt and no longer trade.
@@ -376,7 +376,7 @@ Shares = 1 if MA10 > MA50
   - is called $Z$ because $Z-$score is used to standardize data points.
 
     $$Z = \frac{X - \mu}{\sigma}$$
-  - $Z-$score tells us **how far** a point is from the mean $\mu$.
+  - $Z$-score tells us **how far** a point is from the mean $\mu$.
 - Python functions, modules:
   - `np.log`: compute logs of a Series, or liked-array values.
   - `norm` module from `scipy.stats`:
@@ -391,7 +391,7 @@ Shares = 1 if MA10 > MA50
       - `ddof=0`: calculate population standard deviation, used when **having the entire** population.
       - `ddof=1` (default): calculate sample standard deviation, used when **having a sample** and want to **estimate** population stats.
 
-      *ddof* stands for degrees of freedom.
+        *ddof* stands for degrees of freedom.
       - Population Standard Deviation:
         $$\sigma = \sqrt{\frac{1}{n} \sum_{i = 1}^n (x_i - \mu)}$$
       - Sample Standard Deviation:
@@ -410,7 +410,7 @@ Shares = 1 if MA10 > MA50
     - loss amount: -2.3%, $10k, etc.
   - Example: *the daily 95% VaR is $10k* means:
     - 95% confidence that won't lose more than $10k in a single day.
-    - $\approx$ 5% chance that will lose more than $10k, meaning the return $\leq$ -$10k.
+    - $\approx$ 5% chance that will lose more than \$10k, meaning the return $\leq$ -\$10k.
   - Related to quantile:
     - a quantile is a value below which a certain percentage of data falls.
     - example: the $5^{th}$ percentile ($0.05$ quantile) is the value below which 5% of observation lie.
@@ -418,11 +418,11 @@ Shares = 1 if MA10 > MA50
 
       $$VaR_\alpha = Quantile_{1-\alpha}$$
   - More examples:
-    - *$0.05$ quantile of return = -0.025* means:
+    - *0.05 quantile of return = -0.025* means:
       - 5% chance the return $\leq$ -2.5%
       - $\approx$ 95% confidence that loss $\leq$ 2.5%
       - $\Leftrightarrow$ 95% VaR = 2.5%
-    - *$0.95$ quantile of return = +0.025* means:
+    - *0.95 quantile of return = +0.025* means:
       - 95% chance the return $\leq$ 2.5%
       - 5% chance the return $\geq$ 2.5%
       - $\approx$ 95% confidence that gain $\geq$ 2.5%
