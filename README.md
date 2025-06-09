@@ -362,6 +362,7 @@ Shares = 1 if MA10 > MA50
 - **$Z-$distribution**:
   - is another name for standard normal distribution, **a special case** of the normal distribution with $\mu = 0, \sigma = 1$.
   - is called $Z$ because $Z-$score is used to standardize data points.
+
     $$Z = \frac{X - \mu}{\sigma}$$
   - $Z-$score tells us **how far** a point is from the mean $\mu$.
 - Python functions, modules:
