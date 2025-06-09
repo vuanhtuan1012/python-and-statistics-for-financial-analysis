@@ -215,6 +215,7 @@ Shares = 1 if MA10 > MA50
   - it's like the **center** or **balance point** of the distribution.
   - denoted as $\mu$ or $E[X]$.
   - for a discrete random variable:
+
     $$E[X] = \mu = \sum_{i=1}^n x_ip_i$$
     - $x_i, p_i$ are possible values and their pobabilities.
 - **Variance** tells us **how spread out** the values are from the mean.
@@ -222,6 +223,7 @@ Shares = 1 if MA10 > MA50
   - low variance => values are tightly clustered near the mean.
   - denoted as $\sigma^2$.
   - formula: it's average of squared differences from the mean.
+
     $$\sigma^2 = E[(X-\mu)^2] = \sum_{i=1}^n (x_i - \mu)^2p_i$$
     - measured in **squared units**.
     - harder to interpret intuitively.
@@ -247,10 +249,12 @@ Shares = 1 if MA10 > MA50
       - the probability at an exact point is always 0 (since $nb\_points = \infty$).
       - find probabilities **over an interval** instead.
     - for a PDF, the probability that a random variable $X$ falls in an interval $[a, b]$ is:
+
     $$P(a \leq X \leq b) = \int_a^b f(x)dx$$
     - define the PDF based on **known distribution** or **estimated** from data.
     - there're many types of distribution: normal, exponential, uniform, gamma, beta, etc.
     - each type has its own formula of PDF. For instance, the normal distributuion
+
     $$f(x, \mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}e^{-\frac{(x-\mu)^2}{2\sigma^2}}}$$
     - estimate the PDF from a samle using:
       - histograms: basic but rough.
@@ -275,8 +279,12 @@ Shares = 1 if MA10 > MA50
         - show a clear, smooth shape.
         - best for understanding distribution.
     - **rules of thumb** for choosing bins: given $N$ data points.
-      - Sturges' rule: $nb\_bins = \log_2(N) + 1$
-      - Square-root rule: $nb\_bins = sqrt(N)$
+      - Sturges' rule:
+
+        $$nb\_bins = \log_2(N) + 1$$
+      - Square-root rule:
+
+        $$nb\_bins = sqrt(N)$$
   - **Kernel Density Estimate (KDE)**:
     - is a way to reconstruct a smooth guess of the probability from data using small smooth bumps around each point.
     - instead of cutting data into bins like histogram, KDE places a smooth curve over each data point, then it adds all the curves together to create a smooth overall estimate.
