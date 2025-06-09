@@ -217,6 +217,7 @@ Shares = 1 if MA10 > MA50
   - for a discrete random variable:
 
     $$E[X] = \mu = \sum_{i=1}^n x_ip_i$$
+
     $x_i, p_i$ are possible values and their pobabilities.
 - **Variance** tells us **how spread out** the values are from the mean.
   - high variance => values vary a lot from the mean.
