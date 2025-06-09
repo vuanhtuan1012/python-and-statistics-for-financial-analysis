@@ -359,7 +359,7 @@ Shares = 1 if MA10 > MA50
     - Monte Carlo simulation: simulate thousands of random scenarios.
   - real-life example: banks and investment firms must report their VaR to regulators like Federal Reserve.
 
-    "*Our $10$-days 99% VaR is $100m*" means only 1% chance they lose more than $100m in 10 days.
+    "*Our 10-days 99% VaR is $100m*" means only 1% chance they lose more than $100m in 10 days.
 - **Log daily returns**:
   - are used in doing analysis instead of raw daily returns in real finance intuition.
   - main reasons:
@@ -373,7 +373,7 @@ Shares = 1 if MA10 > MA50
     - easy modeling: many financial models assume log-normal price behavior as this respects the zero-bound.
 - **$Z$-distribution**:
   - is another name for standard normal distribution, **a special case** of the normal distribution with $\mu = 0, \sigma = 1$.
-  - is called $Z$ because $Z-$score is used to standardize data points.
+  - is called $Z$ because $Z$-score is used to standardize data points.
 
     $$Z = \frac{X - \mu}{\sigma}$$
   - $Z$-score tells us **how far** a point is from the mean $\mu$.
