@@ -331,8 +331,10 @@ Shares = 1 if MA10 > MA50
 - **Quantiles**:
   - answer this kind of question: at what value $x$ is a certain percentage of the data to the left ?
   - in other words, quantiles split the distribution into parts based on probability.
-  - the $p-$quantile of a distribution is the value $x$ such that
-  $$P(X \leq x) = p$$
+  - the $p$-quantile of a distribution is the value $x$ such that
+
+    $$P(X \leq x) = p$$
+
     $=> x$ is the point where the CDF equals $p$.
   - quantiles are used for making decisions based on probabilities like:
     - *what's a threshold to include 95% of outcomes ?*
@@ -369,7 +371,7 @@ Shares = 1 if MA10 > MA50
       - negative prices are never implied as logarithm forces positive input.
       - we can't lose more than 100% and log return captures that mathematically cleanly.
     - easy modeling: many financial models assume log-normal price behavior as this respects the zero-bound.
-- **$Z-$distribution**:
+- **$Z$-distribution**:
   - is another name for standard normal distribution, **a special case** of the normal distribution with $\mu = 0, \sigma = 1$.
   - is called $Z$ because $Z-$score is used to standardize data points.
 
