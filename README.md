@@ -217,7 +217,7 @@ Shares = 1 if MA10 > MA50
   - for a discrete random variable:
 
     $$E[X] = \mu = \sum_{i=1}^n x_ip_i$$
-    - $x_i, p_i$ are possible values and their pobabilities.
+    $x_i, p_i$ are possible values and their pobabilities.
 - **Variance** tells us **how spread out** the values are from the mean.
   - high variance => values vary a lot from the mean.
   - low variance => values are tightly clustered near the mean.
@@ -278,7 +278,7 @@ Shares = 1 if MA10 > MA50
       - just right:
         - show a clear, smooth shape.
         - best for understanding distribution.
-    - **rules of thumb** for choosing bins: given $N$ data points.
+    - **rules of thumb** for choosing the number of bins: given $N$ data points.
       - Sturges' rule: nb_bins $= \log_2(N) + 1$
       - Square-root rule: nb_bins $= sqrt(N)$
   - **Kernel Density Estimate (KDE)**:
