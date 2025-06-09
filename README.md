@@ -246,7 +246,7 @@ Shares = 1 if MA10 > MA50
 - Continuous Random Variable
   - **Probability Density Function (PDF)**:
     - describes how densely packed the probability is at each point.
-      - the probability at an exact point is always 0 (since $nb\_points = \infty$).
+      - the probability at an exact point is always 0 (since nb_points $= \infty$).
       - find probabilities **over an interval** instead.
     - for a PDF, the probability that a random variable $X$ falls in an interval $[a, b]$ is:
 
